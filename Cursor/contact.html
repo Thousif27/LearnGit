@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Master Tech Trading &amp; Contracting</title>
+    <meta
+      name="description"
+      content="Contact Master Tech Trading &amp; Contracting in Qatar. Email: info@mastertechqatar.com | Phone: 77839955 / 30199791 / 40011157"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  emailjs.init("iBs0Y-1b5fq-9NiYC"); // Public key
+
+  const form = document.querySelector(".contact-form");
+  const submitBtn = form?.querySelector("button[type='submit']");
+
+  if (!form || !submitBtn) return;
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Sending...";
+
+    emailjs.sendForm(
+      "service_2450yfq",
+      "template_j86e1se",
+      this
+    )
+    .then(() => {
+      alert("✅ Your enquiry has been sent. Our team will contact you within 24 hours.");
+      this.reset();
+    })
+    .catch((err) => {
+      alert("❌ Message failed. Please contact +974 7783 9955");
+      console.error(err);
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `
+        <span>Get Your Quote</span>
+        <svg width="20" height="20" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>`;
+    });
+  });
+});
+</script>
+
+  <body>
+      <div class="ms-loader">
+        <img src="refresh.jpeg" alt="Master Tech" class="loader-logo">
+      
+        <div class="ms-dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      
+        <p class="loader-text">Please wait</p>
+      </div>
+      
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <a href="index.html" class="logo-wrapper" aria-label="Master Tech Trading and Contracting Home">
+            <img src="logo.png" alt="Master Tech Trading and Contracting Logo" class="logo-img" />
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+        <div class="header-contacts">
+          <a href="tel:+97477839955" class="header-phone" aria-label="Call Master Tech">77839955</a>
+          <a href="mailto:info@mastertechqatar.com" class="header-cta">Email Us</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="page-hero">
+        <div class="container">
+          <h1>Get in Touch</h1>
+          <p>Share your requirements and our team will respond with tailored solutions.</p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container contact-layout">
+          <div>
+            <h2>Contact Details</h2>
+            <p>
+              <strong>Email</strong>:
+              <a href="mailto:info@mastertechqatar.com">info@mastertechqatar.com</a>
+            </p>
+            <p><strong>Phone</strong>: 77839955 / 30199791 / 40011157</p>
+            <p>
+              <strong>Website</strong>:
+              <a href="https://mastertechqatar.com" target="_blank">mastertechqatar.com</a>
+            </p>
+          </div>
+          <div>
+            <h2>Enquiry Form</h2>
+            <form class="contact-form" action="#" method="post">
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-row">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" placeholder="Company name" />
+              </div>
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-row">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="Mobile or landline" />
+              </div>
+              <div class="form-row">
+                <label for="category">Category of Interest</label>
+                <select id="category" name="category">
+                  <option value="">Select</option>
+                  <option value="branding">Branding &amp; Signage</option>
+                  <option value="hotel">Hotel Supplies</option>
+                  <option value="matting">Matting Solutions</option>
+                  <option value="industrial">Industrial &amp; Engineering</option>
+                  <option value="trading">Trading Products</option>
+                  <option value="ex-hot">EX &amp; HOT Work Zone</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Tell us about your project, products, or requirements."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <h3>MASTER TECH TRADING &amp; CONTRACTING</h3>
+          <p>ماستر تك للتجارة والمقاولات</p>
+          <p class="footer-copy">
+            &copy; <span id="year"></span> Master Tech Trading &amp; Contracting. All rights reserved.
+          </p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:info@mastertechqatar.com">info@mastertechqatar.com</a></p>
+          <p>Phone: 77839955 / 30199791 / 40011157</p>
+          <p>Website: <a href="https://mastertechqatar.com" target="_blank">mastertechqatar.com</a></p>
+        </div>
+      </div>
+      <script src="main.js"></script>
+    </footer>
+  </body>
+  </html>
+
+
